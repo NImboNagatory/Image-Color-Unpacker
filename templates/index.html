@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="static/css/styles.css">
+</head>
+   <body>
+      <div class="center">
+         <label class="fontsize-40px"><strong>IMAGE</strong> Color Extractor</label>
+      </div><br>
+      {% if img == '' %}
+         <img class="center" src="static/img/no-image-selected.png" alt="No img selected"><br>
+      {% elif img != '' %}
+         <img class="center" src={{img}} alt="No img selected"><br>
+      {% endif %}
+      <form class="center" action = "/uploader" method = "POST"
+         enctype = "multipart/form-data">
+         <input type="file" id="img" name="img" accept="image/*"><br><br>
+         <input type = "submit"/>
+      </form><br><br>
+      {% if colors != "" %}
+       <div class="center">
+          <label class="fontsize-27px">10 Most Used Colors:</label>
+       </div><br><hr size="2" width=auto color="black">  <br>
+
+       <div class='spacebetween_flex'>
+          {% for char in colors: %}
+          <div style="width: 80px;height: 80px;-webkit-border-radius: 40px;-moz-border-radius: 40px;border-radius: 40px;background: rgb{{char[0]}};"></div>
+          {% endfor %}
+       </div><br>
+       <div  class='spacebetween_flex'>
+           {% for char in colors: %}
+            <label>{{char[0][0]}}, {{char[0][1]}}, {{char[0][2]}}</label>
+           {% endfor %}
+       </div>
+      <br><hr size="2" width=auto color="black"><br><br><br>
+       {% endif %}
+   </body>
+</html>

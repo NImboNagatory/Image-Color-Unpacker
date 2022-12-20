@@ -1,0 +1,20 @@
+.center{
+  text-align: center;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+.spacebetween_flex {
+  display: flex;
+  justify-content: space-between;
+}
+.fontsize-40px{
+ font-size: 40px;
+}
+
+.fontsize-27px{
+ font-size: 27px;
+}
